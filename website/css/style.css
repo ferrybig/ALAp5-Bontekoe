@@ -3532,3 +3532,8 @@ ul.feature_list.feature_list1 {
     margin-bottom: 1em;
 }
 }
+
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+    color: #262626;
+    background-color: #41bceb !important;
+}
