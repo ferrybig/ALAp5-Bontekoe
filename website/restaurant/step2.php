@@ -141,7 +141,7 @@ if ($formbuilder->isFilledIn()) {
                                         class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="home.html">Home</a></li>
-                                    <li><a href="menu.html">Menu</a></li>
+                                    <li><a href="menu.php">Menu</a></li>
                                     <li><a href="step1.php">Reseveren</a></li>
                                 </ul>
                             </li>
