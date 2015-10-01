@@ -55,15 +55,7 @@ if ($formbuilder->isFilledIn()) {
 }
 ?>
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Resturant</title>
-    </head>
-    <body>
 
-    </body>
-</html>
 
 
 
@@ -88,6 +80,7 @@ if ($formbuilder->isFilledIn()) {
     <script src="../js/bootstrap.min.js"></script>
     <!-- Custom Theme files -->
     <link href="../css/style.css" rel='stylesheet' type='text/css'/>
+    <link href="../css/font-awesome.css" rel="stylesheet">
     <script>
         $(document).ready(function () {
             $(".dropdown").hover(
@@ -116,7 +109,6 @@ if ($formbuilder->isFilledIn()) {
                             <a href="#" class="icon-home"></a>
                             <ul>
                                 <li><a href="../login.html">Login</a></li>
-                                <li><a href="../register.html">Register</a></li>
                                 <li><a href="../index.html">Logout</a></li>
                             </ul>
                         </li>
