@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.14
+-- version 4.2.11
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 01 okt 2015 om 09:27
--- Serverversie: 5.6.26
--- PHP-versie: 5.6.12
+-- Generation Time: Oct 01, 2015 at 10:29 AM
+-- Server version: 5.6.21-log
+-- PHP Version: 5.6.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `alap5`
@@ -23,11 +23,34 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `menu`
+-- Table structure for table `members`
+--
+
+CREATE TABLE IF NOT EXISTS `members` (
+`id` int(11) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `fullname` varchar(40) NOT NULL,
+  `email` varchar(64) NOT NULL,
+  `password_hash` varchar(128) NOT NULL,
+  `features` set('banned','email_validated','administrator') NOT NULL,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `members`
+--
+
+INSERT INTO `members` (`id`, `username`, `fullname`, `email`, `password_hash`, `features`, `created`) VALUES
+(41, 'test', 'test', '', '$2y$10$vcrhWFHGOhL9xscg13a4iu2pAmGq7PYE2qKrr2jqhrDQ5CAbkz3KO', 'email_validated,administrator', '2015-10-01 08:21:59');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `menu`
 --
 
 CREATE TABLE IF NOT EXISTS `menu` (
-  `id_nummer` int(3) NOT NULL,
+`id_nummer` int(3) NOT NULL,
   `product_nummer` int(3) NOT NULL,
   `product_naam` varchar(30) NOT NULL,
   `product_prijs` float NOT NULL,
@@ -36,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `menu` (
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
--- Gegevens worden geëxporteerd voor tabel `menu`
+-- Dumping data for table `menu`
 --
 
 INSERT INTO `menu` (`id_nummer`, `product_nummer`, `product_naam`, `product_prijs`, `product_beschrijving`, `product_type`) VALUES
@@ -56,11 +79,11 @@ INSERT INTO `menu` (`id_nummer`, `product_nummer`, `product_naam`, `product_prij
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `orders`
+-- Table structure for table `orders`
 --
 
 CREATE TABLE IF NOT EXISTS `orders` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `name` varchar(32) NOT NULL,
   `email` varchar(32) NOT NULL,
   `date` date NOT NULL,
@@ -68,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
--- Gegevens worden geëxporteerd voor tabel `orders`
+-- Dumping data for table `orders`
 --
 
 INSERT INTO `orders` (`id`, `name`, `email`, `date`, `table`) VALUES
@@ -84,16 +107,29 @@ INSERT INTO `orders` (`id`, `name`, `email`, `date`, `table`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `tables`
+-- Table structure for table `sessions`
+--
+
+CREATE TABLE IF NOT EXISTS `sessions` (
+  `id` char(50) NOT NULL,
+  `expires` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `features` set('onetime','verifyemail','require_password','') NOT NULL,
+  `userid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tables`
 --
 
 CREATE TABLE IF NOT EXISTS `tables` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `nummer` varchar(32) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
--- Gegevens worden geëxporteerd voor tabel `tables`
+-- Dumping data for table `tables`
 --
 
 INSERT INTO `tables` (`id`, `nummer`) VALUES
@@ -111,17 +147,17 @@ INSERT INTO `tables` (`id`, `nummer`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `uitgaan`
+-- Table structure for table `uitgaan`
 --
 
 CREATE TABLE IF NOT EXISTS `uitgaan` (
-  `id` int(2) NOT NULL,
+`id` int(2) NOT NULL,
   `page` varchar(20) NOT NULL,
   `text` text NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
--- Gegevens worden geëxporteerd voor tabel `uitgaan`
+-- Dumping data for table `uitgaan`
 --
 
 INSERT INTO `uitgaan` (`id`, `page`, `text`) VALUES
@@ -131,59 +167,84 @@ INSERT INTO `uitgaan` (`id`, `page`, `text`) VALUES
 (4, 'schuurfeest', '<h1>Schuurfeest</h1>\r\nLaad jezelf op een gooi al je zorgen en energie eruit bij onze schuurfeesten. <br />\r\nGezelligheid staat centraal en er is drank in overvloedt! <br /> \r\n<small>(Legitimatie verplicht)</small>');
 
 --
--- Indexen voor geëxporteerde tabellen
+-- Indexes for dumped tables
 --
 
 --
--- Indexen voor tabel `menu`
+-- Indexes for table `members`
+--
+ALTER TABLE `members`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `menu`
 --
 ALTER TABLE `menu`
-  ADD PRIMARY KEY (`id_nummer`);
+ ADD PRIMARY KEY (`id_nummer`);
 
 --
--- Indexen voor tabel `orders`
+-- Indexes for table `orders`
 --
 ALTER TABLE `orders`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `date` (`date`,`table`),
-  ADD KEY `table` (`table`);
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `date` (`date`,`table`), ADD KEY `table` (`table`);
 
 --
--- Indexen voor tabel `tables`
+-- Indexes for table `sessions`
+--
+ALTER TABLE `sessions`
+ ADD PRIMARY KEY (`id`), ADD KEY `userid` (`userid`);
+
+--
+-- Indexes for table `tables`
 --
 ALTER TABLE `tables`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
--- Indexen voor tabel `uitgaan`
+-- Indexes for table `uitgaan`
 --
 ALTER TABLE `uitgaan`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT voor geëxporteerde tabellen
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT voor een tabel `menu`
+-- AUTO_INCREMENT for table `members`
+--
+ALTER TABLE `members`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=42;
+--
+-- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id_nummer` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+MODIFY `id_nummer` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
--- AUTO_INCREMENT voor een tabel `orders`
+-- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
--- AUTO_INCREMENT voor een tabel `tables`
+-- AUTO_INCREMENT for table `tables`
 --
 ALTER TABLE `tables`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
--- AUTO_INCREMENT voor een tabel `uitgaan`
+-- AUTO_INCREMENT for table `uitgaan`
 --
 ALTER TABLE `uitgaan`
-  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `id` int(2) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `sessions`
+--
+ALTER TABLE `sessions`
+ADD CONSTRAINT `sessions_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `members` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
