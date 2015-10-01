@@ -2816,6 +2816,11 @@ label.label_radio {
     font-size: 0.85em;
     font-weight: 300;
 }
+.label{
+    color: #000;
+    font-size: 1.2em;
+    font-weight: 300;
+}
 
 /* --faq --*/
 dl.faq-list {

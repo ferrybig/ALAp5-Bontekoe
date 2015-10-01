@@ -111,10 +111,12 @@ class Formbuilder {
                 $filtered = "";
             if($value["type"] != 'hidden')
                 $data[$key] = <<<FORM
-<label for='$this->idprefix$key'>
+<br /><label for='$this->idprefix$key'>
     <span class=label>$value[label]</span>
+    <br />
     <span class=error>$error</span>
 </label>
+<br/>
 FORM;
             else 
                 $data[$key] = "";

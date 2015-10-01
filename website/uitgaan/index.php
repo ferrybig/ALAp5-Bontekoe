@@ -80,7 +80,7 @@
                                         <ul class="dropdown-menu" role="menu">
                                             <li><a href="../restaurant/index.html">Home</a></li>
                                             <li><a href="../restaurant/menu.html">Menu</a></li>
-                                            <li><a href="../restaurant/reseveren.html">Reseveren</a></li>
+                                            <li><a href="../restaurant/step1.php">Reseveren</a></li>
                                         </ul>
                                     </li>
                                     <li class="dropdown">
