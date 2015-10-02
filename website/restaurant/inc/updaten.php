@@ -142,8 +142,8 @@
                                     $product_type = $_POST['product_type'];
 
                                     try {
-                                        $query = $_DB->prepare("UPDATE `menu` SET `product_nummer` = '$product_nummer', `product_naam` = '$product_naam', `product_prijs` = '$product_prijs', `product_beschrijving` = '$product_beschrijving', `product_type` = '$product_type' WHERE `id_nummer` = '$id'");
-                                        $query->execute();
+                                        $query = $_DB->prepare("UPDATE `menu` SET `product_nummer` = ?, `product_naam` = ?, `product_prijs` = ?, `product_beschrijving` = ?, `product_type` = ? WHERE `id_nummer` = ?");
+                                        $query->execute([$product_nummer,$product_naam,$product_prijs,$product_beschrijving,$product_type,$id]);
                                         header("location: ../index.php");
                                     } catch (PDOException $e) {
                                         $sMsg = '<p>
@@ -159,8 +159,8 @@
                                     $id = $_GET["id"];
 
                                     try {
-                                        $query = $_DB->prepare("SELECT * FROM `menu` WHERE `id_nummer` = '$id'");
-                                        $query->execute();
+                                        $query = $_DB->prepare("SELECT * FROM `menu` WHERE `id_nummer` = ?");
+                                        $query->execute([$id]);
                                     } catch (PDOException $e) {
                                         $sMsg = '<p>
                                             Regelnummer: ' . $e->getLine() . '<br />

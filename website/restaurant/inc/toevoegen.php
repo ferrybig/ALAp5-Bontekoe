@@ -139,8 +139,8 @@
 
                                     try {
                                         $query = $_DB->prepare("INSERT INTO `menu` (`product_nummer`, `product_naam`, `product_prijs`, `product_beschrijving`, product_type)
-                                    VALUES ('$product_nummer', '$product_naam', '$product_prijs', '$product_beschrijving', '$product_type')");
-                                        $query->execute();
+                                    VALUES (?, ?, ?, ?, ?)");
+                                        $query->execute([$product_nummer,$product_naam,$product_prijs,$product_beschrijving,$product_type]);
                                         header("location: ../index.php");
                                     } catch (PDOException $e) {
                                         $sMsg = '<p>
