@@ -1,4 +1,30 @@
-﻿<!DOCTYPE HTML>
+<?php
+
+require_once("../php/_db.php");
+
+if (!isset($_GET['page']))
+    $_GET['page'] = "home";
+try {
+    $query = $_DB->prepare("SELECT `picture`,`text` FROM `uitgaan` WHERE `page` = ?");
+    $query->execute([$_GET['page']]);
+} catch (PDOException $e) {
+    $sMsg = '<p>
+Regelnummer: ' . $e->getLine() . '<br />
+Bestand: ' . $e->getFile() . '<br />
+Foutmelding: ' . $e->getMessage() . '<br />
+</p>';
+    trigger_error($sMsg);
+}
+
+$picture = "";
+$text = "";
+while ($rij = $query->fetch()) {
+    $text = $rij['text'];
+    $picture = $rij['picture'];
+}
+
+?>
+<!DOCTYPE HTML>
 <html>
     <head>
         <title>De Bontekoe</title>
@@ -113,29 +139,12 @@
         <div class="footer">
             <div class="container">
                 <div class="col-md-4 col_2">
-                    <?php
-
-                    require_once("../php/_db.php");
-
-                    if (!isset($_GET['page']))
-                        $_GET['page'] = "home";
-                    try {
-                        $query = $_DB->prepare("SELECT * FROM  `uitgaan` WHERE `page` = ?");
-                        $query->execute([$_GET['page']]);
-                    } catch (PDOException $e) {
-                        $sMsg = '<p>
-                    Regelnummer: ' . $e->getLine() . '<br />
-                    Bestand: ' . $e->getFile() . '<br />
-                    Foutmelding: ' . $e->getMessage() . '<br />
-                    </p>';
-                        trigger_error($sMsg);
-                    }
-
-                    while ($rij = $query->fetch()) {
-                        $text = $rij['text'];
-                    }
-                    echo "$text";
-                    ?>
+                    <?=$text?>
+                </div>
+                <div class="col-md-4 col_2">
+                    <?PHP if(count($picture)) { ?>
+                    <img src="<?=$picture?>" width="300">
+                    <?PHP } ?>
                 </div>
                 <h4>Sociaal Media</h4>
                 <ul class="footer_social">
