@@ -190,6 +190,9 @@ if ($formbuilder->isFilledIn()) {
 
                             </form>
                         </div>
+						<div class="col-md-4 col_2">
+							<img src="../img/fotorestaurant01.jpg" width=300>
+						</div>
                         <div class="col-md-2 col_2">
                             <h4>Sociaal Media</h4>
                             <ul class="footer_social">
