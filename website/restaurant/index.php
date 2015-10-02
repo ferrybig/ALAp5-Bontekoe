@@ -1,4 +1,5 @@
 <?php require_once __DIR__ . "/../php/_db.php"; ?>
+<?php require_once __DIR__ . "/../php/_session.php"; ?>
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -117,476 +118,122 @@
                 </div>-->
                 <div class="footer">
                     <div class="container">
-                        <div class="col-md-4 col_2">
+                        <div class="col-md-8 col_2">
                             <?php
-                            ////////////////////////////////////////////////////////////////////////////////
-                            // VOORGERECHT
-                            ////////////////////////////////////////////////////////////////////////////////
-                            try {
-                                $hoofd = $_DB->prepare("SELECT * FROM  `menu` WHERE `product_type` = 'Voorgerecht'");
-                                $hoofd->execute();
-                            } catch (PDOException $e) {
-                                $sMsg = '<p>
-                                Regelnummer: ' . $e->getLine() . '<br />
-                                Bestand: ' . $e->getFile() . '<br />
-                                Foutmelding: ' . $e->getMessage() . '<br />
-                            </p>';
-                                trigger_error($sMsg);
-                            }
-                            echo "<table border='1'>
-                                <tr>
-                                    <td>nummer</td>
-                                    <td>voorgerecht</td>
-                                    <td>prijs</td>
-                                    <td>acties</td>
-                                </tr>
-                                ";
-                            while ($rij = $hoofd->fetch()) {
-                                $id_nummer = $rij['id_nummer'];
-                                $product_nummer = $rij['product_nummer'];
-                                $product_naam = $rij['product_naam'];
-                                $product_prijs = $rij['product_prijs'];
-                                $product_beschrijving = $rij['product_beschrijving'];
-                                echo "<tr>
-                                    <td>$product_nummer</td>
-                                    <td>$product_naam</td>
-                                    <td>$product_prijs</td>
-                                    <td>
-                                        <a href='inc/delete.php?action=delete&id=$id_nummer'><img src='../img/delete.jpg'></a>
-                                        <a href='inc/updaten.php?id=$id_nummer'><img src='../img/edit.jpg'></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td colspan='3'>$product_beschrijving</td>
-                                </tr>";
-                            }
-                            echo "
-                                <tr>
-                                    <td colspan='3' > Product toevoegen</td>
-                                    <td><a href='inc/toevoegen.php'><img src='../img/toevoegen.png'></a></td>
-                                </tr>
-                            </table><br />";
-                            ////////////////////////////////////////////////////////////////////////////////
-                            // HOOFDGERECHT
-                            ////////////////////////////////////////////////////////////////////////////////
-                            try {
-                                $hoofd = $_DB->prepare("SELECT * FROM  `menu` WHERE `product_type` = 'Hoofdgerecht'");
-                                $hoofd->execute();
-                            } catch (PDOException $e) {
-                                $sMsg = '<p>
-                                Regelnummer: ' . $e->getLine() . '<br />
-                                Bestand: ' . $e->getFile() . '<br />
-                                Foutmelding: ' . $e->getMessage() . '<br />
-                            </p>';
-                                trigger_error($sMsg);
-                            }
-                            echo "<table border='1'>
-                                <tr>
-                                    <td>nummer</td>
-                                    <td>hoofdgerecht</td>
-                                    <td>prijs</td>
-                                    <td>acties</td>
-                                </tr>
-                                ";
-                            while ($rij = $hoofd->fetch()) {
-                                $id_nummer = $rij['id_nummer'];
-                                $product_nummer = $rij['product_nummer'];
-                                $product_naam = $rij['product_naam'];
-                                $product_prijs = $rij['product_prijs'];
-                                $product_beschrijving = $rij['product_beschrijving'];
-                                echo "<tr>
-                                    <td>$product_nummer</td>
-                                    <td>$product_naam</td>
-                                    <td>$product_prijs</td>
-                                    <td>
-                                        <a href='inc/delete.php?action=delete&id=$id_nummer'><img src='../img/delete.jpg'></a>
-                                        <a href='inc/updaten.php?id=$id_nummer'><img src='../img/edit.jpg'></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td colspan='3'>$product_beschrijving</td>
-                                </tr>";
-                            }
-                            echo "
-                                <tr>
-                                    <td colspan='3' > Product toevoegen</td>
-                                    <td><a href='inc/toevoegen.php'><img src='../img/toevoegen.png'></a></td>
-                                </tr>
-                            </table><br />";
-                            ////////////////////////////////////////////////////////////////////////////////
-                            // NAGERECHT
-                            ////////////////////////////////////////////////////////////////////////////////
-                            try {
-                                $hoofd = $_DB->prepare("SELECT * FROM  `menu` WHERE `product_type` = 'Nagerecht'");
-                                $hoofd->execute();
-                            } catch (PDOException $e) {
-                                $sMsg = '<p>
-                                Regelnummer: ' . $e->getLine() . '<br />
-                                Bestand: ' . $e->getFile() . '<br />
-                                Foutmelding: ' . $e->getMessage() . '<br />
-                            </p>';
-                                trigger_error($sMsg);
-                            }
-                            echo "<table border='1'>
-                                <tr>
-                                    <td>nummer</td>
-                                    <td>nagerecht</td>
-                                    <td>prijs</td>
-                                    <td>acties</td>
-                                </tr>
-                                ";
-                            while ($rij = $hoofd->fetch()) {
-                                $id_nummer = $rij['id_nummer'];
-                                $product_nummer = $rij['product_nummer'];
-                                $product_naam = $rij['product_naam'];
-                                $product_prijs = $rij['product_prijs'];
-                                $product_beschrijving = $rij['product_beschrijving'];
-                                echo "<tr>
-                                    <td>$product_nummer</td>
-                                    <td>$product_naam</td>
-                                    <td>$product_prijs</td>
-                                    <td>
-                                        <a href='inc/delete.php?action=delete&id=$id_nummer'><img src='../img/delete.jpg'></a>
-                                        <a href='inc/updaten.php?id=$id_nummer'><img src='../img/edit.jpg'></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td colspan='3'>$product_beschrijving</td>
-                                </tr>";
-                            }
-                            echo "
-                                <tr>
-                                    <td colspan='3' > Product toevoegen</td>
-                                    <td><a href='inc/toevoegen.php'><img src='../img/toevoegen.png'></a></td>
-                                </tr>
-                            </table><br />";
-                            ////////////////////////////////////////////////////////////////////////////////
-                            // DRANKEN
-                            ////////////////////////////////////////////////////////////////////////////////
-                            try {
-                                $hoofd = $_DB->prepare("SELECT * FROM  `menu` WHERE `product_type` = 'Dranken'");
-                                $hoofd->execute();
-                            } catch (PDOException $e) {
-                                $sMsg = '<p>
-                                Regelnummer: ' . $e->getLine() . '<br />
-                                Bestand: ' . $e->getFile() . '<br />
-                                Foutmelding: ' . $e->getMessage() . '<br />
-                            </p>';
-                                trigger_error($sMsg);
-                            }
-                            echo "<table border='1'>
-                                <tr>
-                                    <td>nummer</td>
-                                    <td>dranken</td>
-                                    <td>prijs</td>
-                                    <td>acties</td>
-                                </tr>
-                                ";
-                            while ($rij = $hoofd->fetch()) {
-                                $id_nummer = $rij['id_nummer'];
-                                $product_nummer = $rij['product_nummer'];
-                                $product_naam = $rij['product_naam'];
-                                $product_prijs = $rij['product_prijs'];
-                                $product_beschrijving = $rij['product_beschrijving'];
-                                echo "<tr>
-                                    <td>$product_nummer</td>
-                                    <td>$product_naam</td>
-                                    <td>$product_prijs</td>
-                                    <td>
-                                        <a href='inc/delete.php?action=delete&id=$id_nummer'><img src='../img/delete.jpg'></a>
-                                        <a href='inc/updaten.php?id=$id_nummer'><img src='../img/edit.jpg'></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td colspan='3'>$product_beschrijving</td>
-                                </tr>";
-                            }
-                            echo "
-                                <tr>
-                                    <td colspan='3' > Product toevoegen</td>
-                                    <td><a href='inc/toevoegen.php'><img src='../img/toevoegen.png'></a></td>
-                                </tr>
-                            </table>";
-                            ////////////////////////////////////////////////////////////////////////////////
-                            // table MANAGER
-                            ////////////////////////////////////////////////////////////////////////////////
-                            echo "<h3>Tafel manager</h3>";
-                            $action = filter_input(INPUT_GET, 'action');
-                            if ($action === 'update') {
-                                $stat = $_DB->prepare(""
-                                    . "UPDATE `rooms` SET `tablenumber` = :tablenumber, `roomtype` = :roomtype WHERE `id` = :id");
-                                $stat->execute([
-                                    'name' => filter_input(INPUT_POST, 'tablenumber'),
-                                    'roomtype' => filter_input(INPUT_POST, 'roomtype'),
-                                    'id' => filter_input(INPUT_POST, 'id'),
-                                ]);
-                            } else if ($action === 'insert') {
-                                $stat = $_DB->prepare(""
-                                    . "INSERT INTO `rooms` ( `tablenumber` , `locationid` ) VALUES ( :tablenumber, 1 )"); // TODO Allow location id selector
-                                $stat->execute([
-                                    'tablenumber' => filter_input(INPUT_POST, 'name'),
-                                ]);
-                            }
-                            $delete = filter_input(INPUT_GET, 'delete');
-                            if ($delete != false) {
-                                $stat = $_DB->prepare(""
-                                    . "DELETE FROM `rooms` WHERE `id` = ?");
-                                $stat->execute([$delete]);
-                                echo "<p>Tafel verwijderd!</p>";
-                            }
+                            if(isset($_SESSION['user'])) {
+                            
+                                ////////////////////////////////////////////////////////////////////////////////
+                                // MENU
+                                ////////////////////////////////////////////////////////////////////////////////
 
-                            $type = filter_input(INPUT_GET, 'edit');
-                            if ($type == false) {
-                                $stat = $_DB->prepare("SELECT `id`, `tablenumber` FROM `rooms`");
-                                $stat->execute();
-                                echo '<div id=datatable><table><thead><tr>';
-                                echo "<th>ID</th>";
-                                echo "<th>Tafelnummer</th>";
-                                echo "<th>Edit</th>";
-                                echo "<th>Delete</th>";
-                                echo "</tr></thead><tbody>";
-                                foreach ($stat as $row) {
-                                    echo "<tr>";
-                                    echo "<td class='table'>$row[id]</td>";
-                                    echo "<td class='table'>$row[tablenumber]</td>";
-                                    echo "<td class='table'><a href='?page=rooms&edit=$row[id]'>Edit</a></td>";
-                                    echo "<td class='table'><a href='?page=rooms&delete=$row[id]'>Delete</a></td>";
-                                    echo "</tr>";
-                                }
-                                echo "</tbody><tfoot>";
-                                if ($stat->rowCount() == 0) {
-                                    echo "<tr><td colspan=5><strong>No room types found</strong></td></tr>";
-                                }
-                                echo "<tr><td colspan=5><a href='?page=rooms&edit=-1'>Maak nieuwe tafel</a></td></tr>";
-                                echo "</tfoot></table></div>";
-                            } else if ($type == '-1') {
-                                echo "<form action='?page=rooms&action=insert' method=POST>";
-                                echo "<p><label>Tafel nummer<br><input name=name type=text required></label></p>";
-                                echo "<p><input type=submit></p>";
-                                echo '</form>';
-                            } else {
-                                $stat = $_DB->prepare("SELECT `id`, `tablenumber`, `roomtype` FROM `rooms` WHERE `id` = ?");
-                                $stat->execute([$type]);
-                                $rows = $stat->fetchAll();
-                                if (!empty($rows)) {
-                                    $row = $rows[0];
-                                    echo "<form action='?page=rooms&action=update' method=POST>";
-                                    echo "<p><label>ID<br><input name=id type=number readonly value=$row[id]></label></p>";
-                                    echo "<p><label>Table number<br><input name=name type=text required value='$row[tablenumber]'></label></p>";
-                                    echo "<p><input type=submit></p>";
-                                    echo '</form>';
-                                }
-                            }
-                            $asAjax = filter_has_var(INPUT_POST, 'ajax');
-                            ////////////////////////////////////////////////////////////////////////////////
-                            // Order manager
-                            ////////////////////////////////////////////////////////////////////////////////
-                            if (!$asAjax) {
-                                echo "<h3>Order manager</h3>";
-                            }
-                            $delete = filter_input(INPUT_GET, 'delete');
-                            if ($delete != false) {
-                                $stat = $_DB->prepare(""
-                                    . "DELETE FROM `orderlist` WHERE `id` = ?");
-                                $stat->execute([$delete]);
-                                echo "<p>Order deleted</p>";
-                            }
-                            $orderview = filter_input(INPUT_GET, 'order');
-                            if ($orderview != null) {
-                                $stat = $_DB->prepare("SELECT `memberid`, `price`, `payed`, `created`, `created_by`, `comments` FROM `orderlist` WHERE `id` = ?");
-                                $stat->execute([$orderview]);
-                                $rows = $stat->fetchAll();
-                                if (empty($rows)) {
-                                    echo "No results found";
-                                } else {
-                                    $row = $rows[0];
-                                    $stat = $_DB->prepare("SELECT `fullname` FROM `members` WHERE `id` = ?");
-                                    $stat->execute([$row['memberid']]);
-                                    $user = $stat->fetch();
-                                    unset($stat);
-                                    $stat = $_DB->prepare("SELECT `fullname` FROM `members` WHERE `id` = ?");
-                                    $stat->execute([$row['created_by']]);
-                                    $by = $stat->fetch();
-                                    echo "<p><a href='?page=orders&delete=$orderview'>Delete order</a></p>";
-                                    echo "<dl>";
-                                    echo "<dt>Id</dt><dd>$orderview</dd>";
-                                    echo "<dt>Created</dt><dd>$row[created]</dd>";
-                                    echo "<dt>Payed</dt><dd>$row[payed]</dd>";
-                                    echo "<dt>Price</dt><dd>$ $row[price].00</dd>";
-                                    echo "<dt>Comments</dt><dd>$row[comments]</dd>";
-                                    echo "<dt>Member</dt><dd><a href='?page=user&user=$row[memberid]'>$user[fullname]</a></dd>";
-                                    echo "<dt>Created by</dt><dd><a href='?page=user&user=$row[created_by]'>$by[fullname]</a></dd>";
-                                    echo "</dl>";
-                                    echo "<p>Rooms affected:</p>";
-                                    $stat = $_DB->prepare(<<<SQL
-                                SELECT
-                            `rooms`.`id`,
-                            `rooms`.`roomnumber`,
-                            `roomtypes`.`name` as 'roomtype',
-                            `roomtypes`.`id` as 'roomtypeid',
-                            `orders`.`date`
-                            FROM rooms
-                            INNER JOIN `orders`
-                            ON `rooms`.`id` = `orders`.`roomid`
-                            INNER JOIN `roomtypes`
-                            ON `rooms`.`roomtype` = `roomtypes`.`id`
-                            WHERE `orders`.`orderid` = ?
+                                $types = ["Voorgerecht", "Hoofdgerecht", "Nagerecht", "Dranken"];
+                                foreach($types as $type) {
+                                    $hoofd = $_DB->prepare(<<<SQL
+SELECT `id_nummer`, `product_nummer`, `product_naam`, `product_prijs`, `product_beschrijving`  FROM  `menu` WHERE `product_type` = ?
 SQL
-                                    );
-                                    $stat->execute([$orderview]);
-                                    echo "<div id=datatable><table><thead><tr><th>roomtype</th><th>roomnumber</th><th>date</th></tr></thead><tbody>";
-                                    foreach ($stat as $r) {
-                                        echo <<<HTML
-                                    <tr>
-                                        <td>
-                                            <a href='?page=type&edit=$r[roomtypeid]'>
-                                                $r[roomtype]
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a href='?page=rooms&edit=$r[id]'>
-                                                $r[tablenumber]
-                                            </a>
-                                        </td>
-                                        <td>
-                                            $r[date]
-                                        </td>
-                                    </tr>
-HTML;
+                                            );
+                                    $hoofd->execute([$type]);
+                                    echo "<table border=1 style='width:100%' ><tr>
+                                            <td>nummer</td>
+                                            <td>$type</td>
+                                            <td>prijs</td>
+                                            <td>acties</td></tr>";
+                                    while ($rij = $hoofd->fetch()) {
+                                        $id_nummer = $rij['id_nummer'];
+                                        $product_nummer = $rij['product_nummer'];
+                                        $product_naam = $rij['product_naam'];
+                                        $product_prijs = $rij['product_prijs'];
+                                        $product_beschrijving = $rij['product_beschrijving'];
+                                        echo "<tr>
+                                            <td>$product_nummer</td>
+                                            <td>$product_naam</td>
+                                            <td>$product_prijs</td>
+                                            <td><a href='inc/delete.php?action=delete&id=$id_nummer'><img src='../img/delete.jpg'></a>
+                                                <a href='inc/updaten.php?id=$id_nummer'><img src='../img/edit.jpg'></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td colspan='3'>$product_beschrijving</td>
+                                        </tr>";
                                     }
-                                    if ($stat->rowCount() == 0) {
-                                        echo "<tr><td colspan=3><strong>No rooms found for this order</strong></td></tr>";
-                                    }
-                                    echo "</tbody><tfoot></tfoot></table></div>";
-                                }
-                            } else {
-                                $startdate = filter_input(INPUT_POST, 'start');
-                                if ($startdate != false) {
-                                    $start = DateTime::createFromFormat('Y-m-d', $startdate);
-                                } else {
-                                    $start = new DateTime;
-                                    $start->sub(new DateInterval('P10D'));
-                                }
-                                $start->sub(new DateInterval('P1D'));
-                                $enddate = filter_input(INPUT_POST, 'end');
-                                if ($enddate != false) {
-                                    $end = DateTime::createFromFormat('Y-m-d', $enddate);
-                                } else {
-                                    $end = new DateTime;
-                                    $end->add(new DateInterval('P120D'));
-                                }
-                                $stat = $_DB->prepare(<<<SQL
-                                SELECT
-                            `rooms`.`id`,
-                            `rooms`.`tablenumber` AS 'type'
-                            FROM `rooms`
-                            ORDER BY `rooms`.`id`
-SQL
-                                );
-                                $stat->execute();
-                                $rooms = $stat->fetchAll();
-                                $roomsById = [];
-                                $actualStart = clone $start;
-                                $actualStart->add(new DateInterval('P1D'));
-                                if (!$asAjax) {
-                                    echo "<form method=POST id=orderform action='?page=orders'>Show records from ";
-                                    echo "<input type=date id=startdate name=start required value='" . $actualStart->format('Y-m-d') . "'> ";
-                                    echo "to <input type=date id=enddate name=end required value='" . $end->format('Y-m-d') . "'>";
-                                    echo "<input type=submit value='refresh page'></form>";
-                                    echo "<div id=datatable><table id=ordertable><thead><tr><th>Date</th>";
-                                }
-                                $numbers = [];
-                                $seenNumbers = [];
-                                foreach ($rooms as $r) {
-                                    $roomsById[$r['id']] = $r;
-                                    $numbers[] = $r['id'];
-                                    $seenNumbers[$r['id']] = 0;
-                                    if (!$asAjax) {
-                                        echo "<th>$r[type]</th>";
-                                    }
-                                }
-                                if (!$asAjax) {
-                                    echo "</tr></thead><tbody>";
+                                    echo "
+                                        <tr>
+                                            <td colspan='3'> Product toevoegen</td>
+                                            <td><a href='inc/toevoegen.php'><img src='../img/toevoegen.png'></a></td>
+                                        </tr>
+                                    </table><br />";
                                 }
 
-                                $interval = DateInterval::createFromDateString('1 day');
-                                $period = new DatePeriod($start, $interval, $end);
-                                $stat = $_DB->prepare(<<<SQL
-                                        SELECT
-                                    `orders`.`id`,
-                                    `orders`.`roomid`,
-                                    `orderlist`.`memberid`,
-                                    `members`.`username`,
-                                    `orderlist`.`id` AS 'orderid',
-                                    `orderlist`.`payed` IS NOT NULL AS 'haspayed',
-                                    `orderlist`.`created` AS 'created'
-                                    FROM `orderlist`
-                                    LEFT JOIN `orders`
-                                    ON `orders`.`orderid` = `orderlist`.`id`
-                                    LEFT JOIN `members`
-                                    ON `members`.`id` = `orderlist`.`memberid`
-                                    WHERE `date` = ?
-                                    ORDER BY `orders`.`roomid`
-SQL
-                                );
-                                $isFirstEntry = true;
-                                foreach ($period as $dt) {
-                                    if ($isFirstEntry) {
-                                        ob_start();
-                                    }
-                                    $stat->execute([$dt->format("Y-m-d")]);
-                                    $i = 0;
-                                    $rows = $stat->fetchAll();
-                                    echo "<tr>";
-                                    echo "<td>" . $dt->format("Y-m-d") . "</td>";
-                                    foreach ($rows as $row) {
-                                        while ($row['roomid'] != $numbers[$i]) {
-                                            $classes = '';
-                                            if ($seenNumbers[$numbers[$i]] != 0) {
-                                                $classes .= ' startEntry';
-                                                $seenNumbers[$numbers[$i]] = 0;
-                                            }
-                                            echo "<td class='free$classes'></td>";
-                                            $i++;
-                                        }
-                                        $timestamp = date("Y-m-d H:i:s", strtotime($row['created']));
-                                        $classes = $row['haspayed'] ? "payed" : "pending";
-                                        if ($seenNumbers[$row['roomid']] != $row['orderid']) {
-                                            $classes .= ' startEntry';
-                                            $seenNumbers[$row['roomid']] = $row['orderid'];
-                                        }
-                                        $id = sprintf("%'.05d", $row['orderid'] + 0);
-                                        echo "<td class='nonfree $classes' title='$timestamp'>"
-                                            . "<a href='?page=orders&order=$id'>$id </a>("
-                                            . "<a href='?page=user&user=$row[memberid]'>$row[username]</a>) "
-                                            . "</td>";
-                                        $i++;
-                                    }
-                                    while ($i < count($numbers)) {
-                                        $classes = '';
-                                        if ($seenNumbers[$numbers[$i]] != 0) {
-                                            $classes .= ' startEntry';
-                                            $seenNumbers[$numbers[$i]] = 0;
-                                        }
-                                        echo "<td class='free$classes'></td>";
-                                        $i++;
-                                    }
-                                    echo "</tr>\n";
-                                    if ($isFirstEntry) {
-                                        ob_end_clean();
-                                        $isFirstEntry = false;
-                                    }
-                                }
-                                if (!$asAjax) {
-                                    echo "</tbody><tfoot></tfoot></table></div>";
-                                }
-                            }
+                                ////////////////////////////////////////////////////////////////////////////////
+                                // table MANAGER
+                                ////////////////////////////////////////////////////////////////////////////////
+                                echo "<h3>Tafel manager</h3>";
 
+                                $tafels = $_DB->prepare("SELECT `id`, `nummer` FROM `tables`");
+                                $tafels->execute();
+                                $tafels = $tafels->fetchAll();
+                                
+                                $records = $_DB->prepare("SELECT `date`, `id`, `name`, `email`, `table` FROM `orders`");
+                                $records->execute();
+                                $records = $records->fetchAll(PDO::FETCH_GROUP);
+                                
+                                
+                                echo "<table style='width:100%' border=1><tr><th>Orderdate</th><th>tafel</th><th>persoon</th></tr>";
+                                
+                                foreach($records as $date => $entries) {
+                                    $size = count($entries);
+                                    $first = true;
+                                    foreach($entries as $entry) {
+                                        echo "<tr>";
+                                        if($first) {
+                                            echo"<th rowspan=$size>$date</th>";
+                                            $first = false;
+                                        }
+                                        echo "<td>$entry[table]</td>";
+                                        echo "<td>$entry[name]<br>&nbsp;&nbsp;$entry[email]</td>";
+                                        echo "</tr>";
+                                    }
+                                }
+                                
+                                echo "</table><br><br><br><br>";
+                                
+                            } 
                             ?>
+                            
+                            
+                            
+                            
+                            <h4>Verhaal</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                            <p>
+                                Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu. Aliquam consequat. Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean magna nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea dictumst.
+                            </p>
+                            <p>
+                                Fusce convallis, mauris imperdiet gravida bibendum, nisl turpis suscipit mauris, sed placerat ipsum urna sed risus. In convallis tellus a mauris. Curabitur non elit ut libero tristique sodales. Mauris a lacus. Donec mattis semper leo. In hac habitasse platea dictumst. Vivamus facilisis diam at odio. Mauris dictum, nisi eget consequat elementum, lacus ligula molestie metus, non feugiat orci magna ac sem. Donec turpis. Donec vitae metus. Morbi tristique neque eu mauris. Quisque gravida ipsum non sapien. Proin turpis lacus, scelerisque vitae, elementum at, lobortis ac, quam. Aliquam dictum eleifend risus. In hac habitasse platea dictumst. Etiam sit amet diam. Suspendisse odio. Suspendisse nunc. In semper bibendum libero.
+                            </p>
+                            <p>
+                                Proin nonummy, lacus eget pulvinar lacinia, pede felis dignissim leo, vitae tristique magna lacus sit amet eros. Nullam ornare. Praesent odio ligula, dapibus sed, tincidunt eget, dictum ac, nibh. Nam quis lacus. Nunc eleifend molestie velit. Morbi lobortis quam eu velit. Donec euismod vestibulum massa. Donec non lectus. Aliquam commodo lacus sit amet nulla. Cras dignissim elit et augue. Nullam non diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In hac habitasse platea dictumst. Aenean vestibulum. Sed lobortis elit quis lectus. Nunc sed lacus at augue bibendum dapibus.
+                            </p>
+                            <p>
+                                Aliquam vehicula sem ut pede. Cras purus lectus, egestas eu, vehicula at, imperdiet sed, nibh. Morbi consectetuer luctus felis. Donec vitae nisi. Aliquam tincidunt feugiat elit. Duis sed elit ut turpis ullamcorper feugiat. Praesent pretium, mauris sed fermentum hendrerit, nulla lorem iaculis magna, pulvinar scelerisque urna tellus a justo. Suspendisse pulvinar massa in metus. Duis quis quam. Proin justo. Curabitur ac sapien. Nam erat. Praesent ut quam.
+                            </p>
+                            <p>
+                                Vivamus commodo, augue et laoreet euismod, sem sapien tempor dolor, ac egestas sem ligula quis lacus. Donec vestibulum tortor ac lacus. Sed posuere vestibulum nisl. Curabitur eleifend fermentum justo. Nullam imperdiet. Integer sit amet mauris imperdiet risus sollicitudin rutrum. Ut vitae turpis. Nulla facilisi. Quisque tortor velit, scelerisque et, facilisis vel, tempor sed, urna. Vivamus nulla elit, vestibulum eget, semper et, scelerisque eget, lacus. Pellentesque viverra purus. Quisque elit. Donec ut dolor.
+                            </p>
+                            <p>
+                                Duis volutpat elit et erat. In at nulla at nisl condimentum aliquet. Quisque elementum pharetra lacus. Nunc gravida arcu eget nunc. Nulla iaculis egestas magna. Aliquam erat volutpat. Sed pellentesque orci. Etiam lacus lorem, iaculis sit amet, pharetra quis, imperdiet sit amet, lectus. Integer quis elit ac mi aliquam pretium. Nullam mauris orci, porttitor eget, sollicitudin non, vulputate id, risus. Donec varius enim nec sem. Nam aliquam lacinia enim. Quisque eget lorem eu purus dignissim ultricies. Fusce porttitor hendrerit ante. Mauris urna diam, cursus id, mattis eget, tempus sit amet, risus. Curabitur eu felis. Sed eu mi. Nullam lectus mauris, luctus a, mattis ac, tempus non, leo. Cras mi nulla, rhoncus id, laoreet ut, ultricies id, odio.
+                            </p>
+                            <p>
+                                Donec imperdiet. Vestibulum auctor tortor at orci. Integer semper, nisi eget suscipit eleifend, erat nisl hendrerit justo, eget vestibulum lorem justo ac leo. Integer sem velit, pharetra in, fringilla eu, fermentum id, felis. Vestibulum sed felis. In elit. Praesent et pede vel ante dapibus condimentum. Donec magna. Quisque id risus. Mauris vulputate pellentesque leo. Duis vulputate, ligula at venenatis tincidunt, orci nunc interdum leo, ac egestas elit sem ut lacus. Etiam non diam quis arcu egestas commodo. Curabitur nec massa ac massa gravida condimentum. Aenean id libero. Pellentesque vitae tellus. Fusce lectus est, accumsan ac, bibendum sed, porta eget, augue. Etiam faucibus. Quisque tempus purus eu ante.
+                            </p>
+
+                            
+                            
+                            
+                            
                         </div>
                         <div class="col-md-2 col_2">
                             <h4>Sociaal Media</h4>
