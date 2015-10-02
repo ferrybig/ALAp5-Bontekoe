@@ -1,7 +1,7 @@
 <?php
-include_once("_db.php");
+include_once("../../php/_db.php");
 $id = $_GET['id'];
-$query = $db->prepare("DELETE FROM `menu` WHERE `id_nummer` = '$id'");
+$query = $_DB->prepare("DELETE FROM `menu` WHERE `id_nummer` = '$id'");
 $query->execute();
 header("location: ../index.php");
 $sMsg = '<p>

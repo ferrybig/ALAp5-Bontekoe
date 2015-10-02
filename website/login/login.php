@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 /*
  * $displayform: 
@@ -332,7 +332,7 @@ echo'</div>';
             </div>
             <div class="clearfix"></div>
             <div class="copy">
-                <p>Copyright � 2015 | Bontekoe</p>
+                <p>Copyright © 2015 | Bontekoe</p>
             </div>
         </div>
         </div>
