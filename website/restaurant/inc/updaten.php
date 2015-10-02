@@ -1,6 +1,6 @@
 <?php
 
-include_once("_db.php");
+include_once("../../php/_db.php");
 
 
 if(isset($_GET['action'])){
