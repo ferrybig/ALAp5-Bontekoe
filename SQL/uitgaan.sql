@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 01 okt 2015 om 11:10
+-- Gegenereerd op: 02 okt 2015 om 08:52
 -- Serverversie: 5.6.26
 -- PHP-versie: 5.6.12
 
@@ -37,10 +37,10 @@ CREATE TABLE IF NOT EXISTS `uitgaan` (
 --
 
 INSERT INTO `uitgaan` (`id`, `page`, `text`) VALUES
-(1, 'home', '<h1>Uitgaan in de Bontekoe?</h1>\r\n\r\nDat kan!\r\nElke vrijdag, zaterdag en zondag is het uitgaanscentrum van de Bontekoe voor jou geopend! <br /> <br />\r\n\r\n<h3>Je kan de hele avond wisselen tussen deze area´s:</h3>\r\n\r\n\r\n<a href="uitgaan/index.php?page=80s-90s">80''s en 90''s area</a><br />\r\n\r\n<a href="uitgaan/index.php?page=schuurfeest">Schuurfeest area</a><br />\r\n\r\n<a href="uitgaan/index.php?page=urban">Urban area</a><br />\r\n<br />'),
+(1, 'home', '<h1>Uitgaan in de Bontekoe?</h1>\r\n\r\nDat kan!\r\nElke vrijdag, zaterdag en zondag is het uitgaanscentrum van de Bontekoe voor jou geopend! <br />\r\n\r\nJe kan de hele avond wisselen tussen de area´s. <br /> <br />\r\n'),
 (2, '80s-90s', '<h1>80´s en 90´s area</h1>\r\nGenieten en lekker swingen op de oude discohits? <br />\r\nDan is deze area zeker iets voor jou. <br />\r\nElke hit komt natuurlijk voorbij. <br /> <br />'),
-(3, 'urban', '<h1>Urban</h1>\r\nBij deze area treden er talenten uit de buurt  op. <br />\r\nAllemaal om jou te entertainen. <br />\r\nDus waar wacht je nog op! <br />\r\n<small><i>Urban is alleen toegankelijk met de gekozen outfit style die vooraf wordt bepaald.</small></i> <br /> <br />'),
-(4, 'schuurfeest', '<h1>Schuurfeest</h1>\r\nLaadt jezelf op een gooi al je zorgen en energie eruit bij onze schuurfeesten. <br />\r\nGezelligheid staat centraal en er is drank in overvloedt! <br /> \r\n<i><small>(Legitimatie verplicht)</small></i> <br /> <br />');
+(3, 'urban', '<h1>Urban</h1>\r\nBij deze area treden er talenten uit de buurt  op. <br />\r\nAllemaal om jou te entertainen. <br />\r\nDus waar wacht je nog op Urban is alleen toegankelijk met de gekozen outfit die vooraf wordt bepaald. <br /> <br />'),
+(4, 'schuurfeest', '<h1>Schuurfeest</h1>\r\nLaad jezelf op een gooi al je zorgen en energie eruit bij onze schuurfeesten. <br />\r\nGezelligheid staat centraal en er is drank in overvloedt! <br /> \r\n<small>(Legitimatie verplicht)</small> <br /> <br />');
 
 --
 -- Indexen voor geëxporteerde tabellen
