@@ -152,8 +152,8 @@ while($rij = $hoofd->fetch()){
         <td>$product_naam</td>
         <td>$product_prijs</td>
         <td>
-            <a href='../php/delete.php?action=delete&id=$id_nummer'><img src='../img/delete.jpg'></a>
-            <a href='../php/updaten.php?id=$id_nummer'><img src='../img/edit.jpg'></a>
+            <a href='inc/delete.php?action=delete&id=$id_nummer'><img src='../img/delete.jpg'></a>
+            <a href='inc/updaten.php?id=$id_nummer'><img src='../img/edit.jpg'></a>
         </td>
     </tr>
     <tr>
@@ -164,7 +164,7 @@ while($rij = $hoofd->fetch()){
 echo "
     <tr>
         <td colspan='3' > Product toevoegen</td>
-        <td><a href='../php/toevoegen.php'><img src='../img/toevoegen.png'></a></td>
+        <td><a href='inc/toevoegen.php'><img src='../img/toevoegen.png'></a></td>
     </tr>
 </table><br />";
 ////////////////////////////////////////////////////////////////////////////////
@@ -200,8 +200,8 @@ while($rij = $hoofd->fetch()){
         <td>$product_naam</td>
         <td>$product_prijs</td>
         <td>
-            <a href='../php/delete.php?action=delete&id=$id_nummer'><img src='../img/delete.jpg'></a>
-            <a href='../php/updaten.php?id=$id_nummer'><img src='../img/edit.jpg'></a>
+            <a href='inc/delete.php?action=delete&id=$id_nummer'><img src='../img/delete.jpg'></a>
+            <a href='inc/updaten.php?id=$id_nummer'><img src='../img/edit.jpg'></a>
         </td>
     </tr>
     <tr>
@@ -212,7 +212,7 @@ while($rij = $hoofd->fetch()){
 echo "
     <tr>
         <td colspan='3' > Product toevoegen</td>
-        <td><a href='../php/toevoegen.php'><img src='../img/toevoegen.png'></a></td>
+        <td><a href='inc/toevoegen.php'><img src='../img/toevoegen.png'></a></td>
     </tr>
 </table><br />";
 ////////////////////////////////////////////////////////////////////////////////
@@ -248,8 +248,8 @@ while($rij = $hoofd->fetch()){
         <td>$product_naam</td>
         <td>$product_prijs</td>
         <td>
-            <a href='../php/delete.php?action=delete&id=$id_nummer'><img src='../img/delete.jpg'></a>
-            <a href='../php/updaten.php?id=$id_nummer'><img src='../img/edit.jpg'></a>
+            <a href='inc/delete.php?action=delete&id=$id_nummer'><img src='../img/delete.jpg'></a>
+            <a href='inc/updaten.php?id=$id_nummer'><img src='../img/edit.jpg'></a>
         </td>
     </tr>
     <tr>
@@ -260,7 +260,7 @@ while($rij = $hoofd->fetch()){
 echo "
     <tr>
         <td colspan='3' > Product toevoegen</td>
-        <td><a href='../php/toevoegen.php'><img src='../img/toevoegen.png'></a></td>
+        <td><a href='inc/toevoegen.php'><img src='../img/toevoegen.png'></a></td>
     </tr>
 </table><br />";
 ////////////////////////////////////////////////////////////////////////////////
@@ -296,8 +296,8 @@ while($rij = $hoofd->fetch()){
         <td>$product_naam</td>
         <td>$product_prijs</td>
         <td>
-            <a href='../php/delete.php?action=delete&id=$id_nummer'><img src='../img/delete.jpg'></a>
-            <a href='../php/updaten.php?id=$id_nummer'><img src='../img/edit.jpg'></a>
+            <a href='inc/delete.php?action=delete&id=$id_nummer'><img src='../img/delete.jpg'></a>
+            <a href='inc/updaten.php?id=$id_nummer'><img src='../img/edit.jpg'></a>
         </td>
     </tr>
     <tr>
@@ -308,7 +308,7 @@ while($rij = $hoofd->fetch()){
 echo "
     <tr>
         <td colspan='3' > Product toevoegen</td>
-        <td><a href='../php/toevoegen.php'><img src='../img/toevoegen.png'></a></td>
+        <td><a href='inc/toevoegen.php'><img src='../img/toevoegen.png'></a></td>
     </tr>
 </table>";
 ////////////////////////////////////////////////////////////////////////////////

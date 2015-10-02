@@ -1,3 +1,4 @@
+<?PHP ob_start(); ?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -139,7 +140,7 @@
                             $query = $_DB->prepare("INSERT INTO `menu` (`product_nummer`, `product_naam`, `product_prijs`, `product_beschrijving`, product_type)
                             VALUES ('$product_nummer', '$product_naam', '$product_prijs', '$product_beschrijving', '$product_type')");
                             $query->execute();
-                            header("location: ../restaurant/index.php");
+                            header("location: ../index.php");
                         }catch (PDOException $e){
                             $sMsg = '<p>
 Regelnummer: ' . $e->getLine() . '<br />
@@ -198,3 +199,4 @@ Foutmelding: ' . $e->getMessage() . '<br />
 </div>
 </body>
 </html>
+<?PHP ob_end_flush(); ?>
