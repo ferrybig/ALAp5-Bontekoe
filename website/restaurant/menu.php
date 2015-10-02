@@ -124,10 +124,10 @@ require_once __DIR__ . "/../php/_db.php";
                     ////////////////////////////////////////////////////////////////////////////////
                     // VOORGERECHT
                     ////////////////////////////////////////////////////////////////////////////////
-                    try{
+                    try {
                         $hoofd = $_DB->prepare("SELECT * FROM  `menu` WHERE `product_type` = 'voorgerecht'");
                         $hoofd->execute();
-                    }catch(PDOException $e){
+                    } catch (PDOException $e) {
                         $sMsg = '<p>
             Regelnummer: ' . $e->getLine() . '<br />
             Bestand: ' . $e->getFile() . '<br />
@@ -142,7 +142,7 @@ require_once __DIR__ . "/../php/_db.php";
             <td>prijs</td>
             </tr>
             ";
-                    while($rij = $hoofd->fetch()){
+                    while ($rij = $hoofd->fetch()) {
                         $id_nummer = $rij['id_nummer'];
                         $product_nummer = $rij['product_nummer'];
                         $product_naam = $rij['product_naam'];
@@ -163,10 +163,10 @@ require_once __DIR__ . "/../php/_db.php";
                     ////////////////////////////////////////////////////////////////////////////////
                     // HOOFDGERECHT
                     ////////////////////////////////////////////////////////////////////////////////
-                    try{
+                    try {
                         $hoofd = $_DB->prepare("SELECT * FROM  `menu` WHERE `product_type` = 'Hoofdgerecht'");
                         $hoofd->execute();
-                    }catch(PDOException $e){
+                    } catch (PDOException $e) {
                         $sMsg = '<p>
             Regelnummer: ' . $e->getLine() . '<br />
             Bestand: ' . $e->getFile() . '<br />
@@ -181,7 +181,7 @@ require_once __DIR__ . "/../php/_db.php";
             <td>prijs</td>
             </tr>
             ";
-                    while($rij = $hoofd->fetch()){
+                    while ($rij = $hoofd->fetch()) {
                         $id_nummer = $rij['id_nummer'];
                         $product_nummer = $rij['product_nummer'];
                         $product_naam = $rij['product_naam'];
@@ -202,10 +202,10 @@ require_once __DIR__ . "/../php/_db.php";
                     ////////////////////////////////////////////////////////////////////////////////
                     // NAGERECHT
                     ////////////////////////////////////////////////////////////////////////////////
-                    try{
+                    try {
                         $hoofd = $_DB->prepare("SELECT * FROM  `menu` WHERE `product_type` = 'Nagerecht'");
                         $hoofd->execute();
-                    }catch(PDOException $e){
+                    } catch (PDOException $e) {
                         $sMsg = '<p>
             Regelnummer: ' . $e->getLine() . '<br />
             Bestand: ' . $e->getFile() . '<br />
@@ -220,7 +220,7 @@ require_once __DIR__ . "/../php/_db.php";
             <td>prijs</td>
             </tr>
             ";
-                    while($rij = $hoofd->fetch()){
+                    while ($rij = $hoofd->fetch()) {
                         $id_nummer = $rij['id_nummer'];
                         $product_nummer = $rij['product_nummer'];
                         $product_naam = $rij['product_naam'];
@@ -241,10 +241,10 @@ require_once __DIR__ . "/../php/_db.php";
                     ////////////////////////////////////////////////////////////////////////////////
                     // DRANKEN
                     ////////////////////////////////////////////////////////////////////////////////
-                    try{
+                    try {
                         $hoofd = $_DB->prepare("SELECT * FROM  `menu` WHERE `product_type` = 'Dranken'");
                         $hoofd->execute();
-                    }catch(PDOException $e){
+                    } catch (PDOException $e) {
                         $sMsg = '<p>
             Regelnummer: ' . $e->getLine() . '<br />
             Bestand: ' . $e->getFile() . '<br />
@@ -259,7 +259,7 @@ require_once __DIR__ . "/../php/_db.php";
             <td>prijs</td>
             </tr>
             ";
-                    while($rij = $hoofd->fetch()){
+                    while ($rij = $hoofd->fetch()) {
                         $id_nummer = $rij['id_nummer'];
                         $product_nummer = $rij['product_nummer'];
                         $product_naam = $rij['product_naam'];
