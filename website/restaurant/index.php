@@ -170,10 +170,6 @@ SQL
                                 ////////////////////////////////////////////////////////////////////////////////
                                 echo "<h3>Tafel manager</h3>";
 
-                                $tafels = $_DB->prepare("SELECT `id`, `nummer` FROM `tables`");
-                                $tafels->execute();
-                                $tafels = $tafels->fetchAll();
-                                
                                 $records = $_DB->prepare("SELECT `date`, `id`, `name`, `email`, `table` FROM `orders`");
                                 $records->execute();
                                 $records = $records->fetchAll(PDO::FETCH_GROUP);
