@@ -93,9 +93,9 @@ ob_start();
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Restaurant<span
                                                 class="caret"></span></a>
                                         <ul class="dropdown-menu" role="menu">
-                                            <li><a href="../home.html">Home</a></li>
-                                            <li><a href="../menu.html">Menu</a></li>
-                                            <li><a href="../reseveren.html">Reseveren</a></li>
+                                            <li><a href="../restaurant/index.php">Home</a></li>
+                                            <li><a href="../restaurant/menu.php">Menu</a></li>
+                                            <li><a href="../restaurant/step1.php">Reseveren</a></li>
                                         </ul>
                                     </li>
                                     <li class="dropdown">
@@ -326,8 +326,8 @@ echo'</div>';
                 </div>
                 <h4>Sociaal Media</h4>
                 <ul class="footer_social">
-                    <li><a href="#"><i class="fa fa-facebook fa1"> </i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter fa1"> </i></a></li>
+                    <li><a href="https://www.facebook.com"><i class="fa fa-facebook fa1"> </i></a></li>
+                    <li><a href="https://www.twitter.com"><i class="fa fa-twitter fa1"> </i></a></li>
                 </ul>
             </div>
             <div class="clearfix"></div>

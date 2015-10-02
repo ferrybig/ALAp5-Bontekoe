@@ -73,8 +73,8 @@ while ($rij = $query->fetch()) {
                                 <li class="green">
                                     <a href="#" class="icon-home"></a>
                                     <ul>
-                                        <li><a href="login/login.php">Login</a></li>
-                                        <li><a href="login/logout.php">Logout</a></li>
+                                        <li><a href="../login/login.php">Login</a></li>
+                                        <li><a href="../login/logout.php">Logout</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -148,8 +148,8 @@ while ($rij = $query->fetch()) {
                 </div>
                 <h4>Sociaal Media</h4>
                 <ul class="footer_social">
-                    <li><a href="http://www.facebook.com"><i class="fa fa-facebook fa1"> </i></a></li>
-                    <li><a href="http://www.twitter.com"><i class="fa fa-twitter fa1"> </i></a></li>
+                    <li><a href="https://www.facebook.com"><i class="fa fa-facebook fa1"> </i></a></li>
+                    <li><a href="https://www.twitter.com"><i class="fa fa-twitter fa1"> </i></a></li>
                 </ul>
             </div>
             <div class="clearfix"></div>
