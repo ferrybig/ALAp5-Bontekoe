@@ -140,7 +140,7 @@ if (isset($_SESSION['user'])) { //if there is a seasion user
 
     $mailkey = explode(":", filter_input(INPUT_GET, "activate"));
     require_once '../php/_db.php';//required the page _db.php
-    $results = $db->prepare("
+    $results = $_DB->prepare("
                                 SELECT `id`, `userid`, `features` FROM `sessions` WHERE `id` = :id AND `userid` = :userid AND `expires` > NOW()
                                 ");
     $results->execute(array(
@@ -155,7 +155,7 @@ if (isset($_SESSION['user'])) { //if there is a seasion user
     $user_information = null;
     if ($session_information != null) {
         $session_information['features'] = explode(",", $session_information['features']);
-        $results = $db->prepare("
+        $results = $_DB->prepare("
                                     SELECT `id`, `username`, `fullname`, `email`, `features` FROM `members` WHERE `id` = :id 
                                     ");
         $results->execute(array(
@@ -177,7 +177,7 @@ if (isset($_SESSION['user'])) { //if there is a seasion user
             if (!in_array("email_validated", $user_information['features'])) {
                 array_push($user_information['features'], "email_validated");
             }  // sql code
-            $results = $db->prepare("
+            $results = $_DB->prepare("
                                     UPDATE `members` SET `features` = :features WHERE `id` = :id 
                                     ");
             $results->execute(array(
@@ -187,7 +187,7 @@ if (isset($_SESSION['user'])) { //if there is a seasion user
             unset($results);
         }
         if (in_array("onetime", $session_information['features'])) {
-            $results = $db->prepare("
+            $results = $_DB->prepare("
                                     DELETE FROM `sessions` WHERE `id` = :id 
                                     ");
             $results->execute(array(
@@ -226,7 +226,7 @@ if (isset($_SESSION['user'])) { //if there is a seasion user
     } else if ($sql != false) {
         unset($_SESSION['token']);
         require_once '../php/_db.php';
-        $results = $db->prepare($sql);
+        $results = $_DB->prepare($sql);
         $results->execute(array(
             "login" => $login,
         ));
