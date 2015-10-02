@@ -104,8 +104,8 @@ if ($formbuilder->isFilledIn()) {
                                 <li class="green">
                                     <a href="#" class="icon-home"></a>
                                     <ul>
-                                        <li><a href="../login.html">Login</a></li>
-                                        <li><a href="../index.html">Logout</a></li>
+                                        <li><a href="../login/login.php">Login</a></li>
+                                        <li><a href="../login/logout.php">Logout</a></li>
                                     </ul>
                                 </li>
                             </ul>

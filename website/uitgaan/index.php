@@ -73,8 +73,8 @@ while ($rij = $query->fetch()) {
                                 <li class="green">
                                     <a href="#" class="icon-home"></a>
                                     <ul>
-                                        <li><a href="login/login.php">Login</a></li>
-                                        <li><a href="login/logout.php">Logout</a></li>
+                                        <li><a href="../login/login.php">Login</a></li>
+                                        <li><a href="../login/logout.php">Logout</a></li>
                                     </ul>
                                 </li>
                             </ul>
