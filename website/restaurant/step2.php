@@ -140,7 +140,7 @@ if ($formbuilder->isFilledIn()) {
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Restaurant<span
                                         class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="home.html">Home</a></li>
+                                    <li><a href="index.php">Home</a></li>
                                     <li><a href="menu.php">Menu</a></li>
                                     <li><a href="step1.php">Reseveren</a></li>
                                 </ul>
