@@ -36,6 +36,7 @@ if (!isset($_SESSION['reserv']['realform'])) {
         <!-- Custom Theme files -->
         <link href="../css/style.css" rel='stylesheet' type='text/css'/>
         <link href="../css/font-awesome.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
         <script>
             $(document).ready(function () {
                 $(".dropdown").hover(
