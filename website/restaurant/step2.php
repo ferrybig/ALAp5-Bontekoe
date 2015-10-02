@@ -37,13 +37,13 @@ $formbuilder = new Formbuilder([
     "mail" => [
         "label" => "Uw email address",
         "type" => "mail",
-        "placeholder" => "email@yourdomain.nl",
+        "placeholder" => "email@e-mail.nl",
         'required' => true,
     ],
     "name" => [
         "label" => "Uw naam",
         "type" => "text",
-        "placeholder" => "Jou Naam",
+        "placeholder" => "Naam",
         'required' => true,
     ]
         ]);
