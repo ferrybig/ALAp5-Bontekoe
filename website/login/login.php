@@ -326,8 +326,8 @@ echo'</div>';
                 </div>
                 <h4>Sociaal Media</h4>
                 <ul class="footer_social">
-                    <li><a href="#"><i class="fa fa-facebook fa1"> </i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter fa1"> </i></a></li>
+                    <li><a href="https://www.facebook.com"><i class="fa fa-facebook fa1"> </i></a></li>
+                    <li><a href="https://www.twitter.com"><i class="fa fa-twitter fa1"> </i></a></li>
                 </ul>
             </div>
             <div class="clearfix"></div>
