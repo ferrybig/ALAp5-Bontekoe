@@ -120,8 +120,8 @@
                     if (!isset($_GET['page']))
                         $_GET['page'] = "home";
                     try {
-                        $query = $_DB->prepare("SELECT * FROM  `uitgaan` WHERE `page` = '$_GET[page]'");
-                        $query->execute();
+                        $query = $_DB->prepare("SELECT * FROM  `uitgaan` WHERE `page` = ?");
+                        $query->execute([$_GET['page']]);
                     } catch (PDOException $e) {
                         $sMsg = '<p>
                     Regelnummer: ' . $e->getLine() . '<br />
