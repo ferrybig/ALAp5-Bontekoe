@@ -104,8 +104,8 @@ if ($formbuilder->isFilledIn()) {
                                 <li class="green">
                                     <a href="#" class="icon-home"></a>
                                     <ul>
-                                        <li><a href="../login.html">Login</a></li>
-                                        <li><a href="../index.html">Logout</a></li>
+                                        <li><a href="../login/login.php">Login</a></li>
+                                        <li><a href="../login/logout.php">Logout</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -190,6 +190,9 @@ if ($formbuilder->isFilledIn()) {
 
                             </form>
                         </div>
+						<div class="col-md-4 col_2">
+							<img src="../img/fotorestaurant01.jpg" width=300>
+						</div>
                         <div class="col-md-2 col_2">
                             <h4>Sociaal Media</h4>
                             <ul class="footer_social">

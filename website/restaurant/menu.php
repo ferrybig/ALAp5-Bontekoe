@@ -119,7 +119,21 @@ require_once __DIR__ . "/../php/_db.php";
         </div>-->
         <div class="footer">
             <div class="container">
+				<div class="col-md-4 col_2">
+					<img src="../img/menufoto01.jpg" width="250" height=210>
+					<br>
+					<br>
+					<img src="../img/menufoto02.jpg" width="250" height=210>
+					<br>
+					<br>
+					<img src="../img/menufoto03.jpg" width="250" height=210>
+					<br>
+					<br>
+					<img src="../img/menufoto04.jpg" width="250" height=210>
+				</div>
+				
                 <div class="col-md-4 col_2">
+				<h3>Menu Voor Restaurant!</h3>
                     <?php
                     ////////////////////////////////////////////////////////////////////////////////
                     // VOORGERECHT
@@ -282,8 +296,8 @@ require_once __DIR__ . "/../php/_db.php";
                 <div class="col-md-2 col_2">
                     <h4>Sociaal Media</h4>
                     <ul class="footer_social">
-                        <li><a href="#"><i class="fa fa-facebook fa1"> </i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter fa1"> </i></a></li>
+                        <li><a href="https://www.facebook.com"><i class="fa fa-facebook fa1"> </i></a></li>
+                        <li><a href="https://www.twitter.com"><i class="fa fa-twitter fa1"> </i></a></li>
                     </ul>
                 </div>
                 <div class="clearfix"></div>
