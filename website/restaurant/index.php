@@ -135,10 +135,10 @@ SQL
                                             );
                                     $hoofd->execute([$type]);
                                     echo "<table border=1 style='width:100%' ><tr>
-                                            <td>nummer</td>
+                                            <td>Nummer</td>
                                             <td>$type</td>
-                                            <td>prijs</td>
-                                            <td>acties</td></tr>";
+                                            <td>Prijs</td>
+                                            <td>Acties</td></tr>";
                                     while ($rij = $hoofd->fetch()) {
                                         $id_nummer = $rij['id_nummer'];
                                         $product_nummer = $rij['product_nummer'];
@@ -148,7 +148,7 @@ SQL
                                         echo "<tr>
                                             <td>$product_nummer</td>
                                             <td>$product_naam</td>
-                                            <td>$product_prijs</td>
+                                            <td>€ $product_prijs</td>
                                             <td><a href='inc/delete.php?action=delete&id=$id_nummer'><img src='../img/delete.jpg'></a>
                                                 <a href='inc/updaten.php?id=$id_nummer'><img src='../img/edit.jpg'></a>
                                             </td>

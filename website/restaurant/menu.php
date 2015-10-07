@@ -152,9 +152,9 @@ require_once __DIR__ . "/../php/_db.php";
                     }
                     echo "<table border='1'>
             <tr>
-            <td>nummer</td>
-            <td>voorgerecht</td>
-            <td>prijs</td>
+            <td>Nummer</td>
+            <td>Voorgerecht</td>
+            <td>Prijs</td>
             </tr>
             ";
                     while ($rij = $hoofd->fetch()) {
@@ -166,7 +166,7 @@ require_once __DIR__ . "/../php/_db.php";
                         echo "<tr>
         <td>$product_nummer</td>
         <td>$product_naam</td>
-        <td>$product_prijs</td>
+        <td>€ $product_prijs</td>
         </tr>
         <tr>
         <td></td>
@@ -191,9 +191,9 @@ require_once __DIR__ . "/../php/_db.php";
                     }
                     echo "<table border='1'>
             <tr>
-            <td>nummer</td>
-            <td>hoofdgerecht</td>
-            <td>prijs</td>
+            <td>Nummer</td>
+            <td>Hoofdgerecht</td>
+            <td>Prijs</td>
             </tr>
             ";
                     while ($rij = $hoofd->fetch()) {
@@ -205,7 +205,7 @@ require_once __DIR__ . "/../php/_db.php";
                         echo "<tr>
         <td>$product_nummer</td>
         <td>$product_naam</td>
-        <td>$product_prijs</td>
+        <td>€ $product_prijs</td>
         </tr>
         <tr>
         <td></td>
@@ -230,9 +230,9 @@ require_once __DIR__ . "/../php/_db.php";
                     }
                     echo "<table border='1'>
             <tr>
-            <td>nummer</td>
-            <td>nagerecht</td>
-            <td>prijs</td>
+            <td>Nummer</td>
+            <td>Nagerecht</td>
+            <td>Prijs</td>
             </tr>
             ";
                     while ($rij = $hoofd->fetch()) {
@@ -244,7 +244,7 @@ require_once __DIR__ . "/../php/_db.php";
                         echo "<tr>
         <td>$product_nummer</td>
         <td>$product_naam</td>
-        <td>$product_prijs</td>
+        <td>€ $product_prijs</td>
         </tr>
         <tr>
         <td></td>
@@ -269,9 +269,9 @@ require_once __DIR__ . "/../php/_db.php";
                     }
                     echo "<table border='1'>
             <tr>
-            <td>nummer</td>
-            <td>dranken</td>
-            <td>prijs</td>
+            <td>Nummer</td>
+            <td>Dranken</td>
+            <td>Prijs</td>
             </tr>
             ";
                     while ($rij = $hoofd->fetch()) {
@@ -283,7 +283,7 @@ require_once __DIR__ . "/../php/_db.php";
                         echo "<tr>
         <td>$product_nummer</td>
         <td>$product_naam</td>
-        <td>$product_prijs</td>
+        <td>€ $product_prijs</td>
         </tr>
         <tr>
         <td></td>
