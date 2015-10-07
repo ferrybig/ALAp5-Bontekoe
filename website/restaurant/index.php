@@ -203,7 +203,7 @@ SQL
                             
                             <h4>Belangrijk om te weten over het restaurant</h4>
                             <p>
-                                Het restaurant is dagelijks van 16:00 uur tot 23:00 uur geopend! <br /> <br />
+                                Het restaurant is dagelijks van 16:00 uur tot 23:00 uur geopend! <br />
                             </p>
 
                             <p>
@@ -211,8 +211,7 @@ SQL
                                 Reserveren kan op de reserveerpagina onder "Restaurant" en dan "Reserveren". <br />
                                 Hier kan je de reservatiedag opgeven <br />
                                 Na het kiezen van de reservatiedag hoef je alleen nog maar je e-mailadres en je naam in te voeren. <br />
-                                Nadat je dit hebt gedaan krijg je een e-mail met de gegevens over de reservatie.
-
+                                Nadat je dit hebt gedaan krijg je een e-mail met de gegevens over de reservatie. <br /> <br />
                             </p>
 
                             
