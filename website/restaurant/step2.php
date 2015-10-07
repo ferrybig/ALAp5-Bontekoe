@@ -152,7 +152,7 @@ if ($formbuilder->isFilledIn()) {
                                             <li><a href="../uitgaan/index.php?page=urban">Urban</a></li>
                                         </ul>
                                     </li>
-                                    <li class="last"><a href="../contact.html">Contacts</a></li>
+                                    <li class="last"><a href="../contact.html">Contact</a></li>
                                 </ul>
                             </div>
                             <!-- /.navbar-collapse -->

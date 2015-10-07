@@ -119,7 +119,7 @@ while ($rij = $query->fetch()) {
                                             <li><a href="index.php?page=schuurfeest">Schuurfeest</a></li>
                                             <li><a href="index.php?page=urban">Urban</a></li>
                                         </ul>
-                                    <li class="last"><a href="../contact.html">Contacts</a></li>
+                                    <li class="last"><a href="../contact.html">Contact</a></li>
                                 </ul>
                             </div>
                             <!-- /.navbar-collapse -->
