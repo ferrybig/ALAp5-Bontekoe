@@ -35,7 +35,7 @@ $formbuilder = new Formbuilder([
         'required' => true,
     ],
     "mail" => [
-        "label" => "E-mail address:",
+        "label" => "E-mail adres:",
         "type" => "mail",
         "placeholder" => "email@e-mail.nl",
         'required' => true,
