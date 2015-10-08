@@ -29,19 +29,19 @@ $formbuilder = new Formbuilder([
     ],
     "date" => [
         "type" => "date",
-        'label' => "Uw gewenste datum",
+        'label' => "Datum:",
         'min' => date('Y-m-d'),
         'max' => date('Y-m-d', strtotime('+1 week')),
         'required' => true,
     ],
     "mail" => [
-        "label" => "Uw email address",
+        "label" => "E-mail address:",
         "type" => "mail",
         "placeholder" => "email@e-mail.nl",
         'required' => true,
     ],
     "name" => [
-        "label" => "Uw naam",
+        "label" => "Naam:",
         "type" => "text",
         "placeholder" => "Naam",
         'required' => true,
@@ -169,6 +169,11 @@ if ($formbuilder->isFilledIn()) {
         <!-- ============================  Navigation End ============================ -->
         <div class="grid_3">
             <div class="container">
+                <div class="col-md-10 col_2">
+                   <p>
+                     <h3>Op deze pagina kan je na het invullen van een formulier je reservatie plaatsen.</h3> 
+                    </p>
+                </div>
                 <!--<div class="map">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3150859.767904157!2d-96.62081048651531!3d39.536794757966845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1408111832978"> </iframe>
                 </div>-->
@@ -187,7 +192,7 @@ if ($formbuilder->isFilledIn()) {
                                         <?PHP echo $value ?>
                                     </p>
                                 <?PHP } ?>
-                                <input type="submit">
+                                <input type="submit" value="Verstuur">
 
                             </form>
                         </div>
