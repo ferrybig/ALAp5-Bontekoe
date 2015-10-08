@@ -4340,3 +4340,9 @@ ul.feature_list.feature_list1 {
     color: #262626;
     background-color: #41bceb !important;
 }
+
+.openingstijden tr td,
+.openingstijden tr th{
+    min-width: 100px;
+    border: solid 1px #000;
+}
