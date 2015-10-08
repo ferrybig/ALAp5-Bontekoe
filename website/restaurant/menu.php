@@ -134,7 +134,7 @@ require_once __DIR__ . "/../php/_db.php";
 				</div>
 				
                 <div class="col-md-4 col_2">
-				<h3>Menu Voor Restaurant!</h3>
+				<h3>Ons menu</h3>
                     <?php
                     ////////////////////////////////////////////////////////////////////////////////
                     // VOORGERECHT
