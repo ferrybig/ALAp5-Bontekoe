@@ -219,6 +219,11 @@ SQL
                             
                             
                         </div>
+
+                        <div class="col-md-8 col_2">
+                            <img src="../img/restauranthome.jpg" alt="#" />
+                        </div>
+
                         <div class="col-md-2 col_2">
                             <h4>Sociaal Media</h4>
                             <ul class="footer_social">
