@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.11
+-- version 4.4.14
 -- http://www.phpmyadmin.net
 --
--- Machine: 127.0.0.1
--- Gegenereerd op: 07 okt 2015 om 15:53
--- Serverversie: 5.6.21
--- PHP-versie: 5.6.3
+-- Host: 127.0.0.1
+-- Gegenereerd op: 09 okt 2015 om 13:45
+-- Serverversie: 5.6.26
+-- PHP-versie: 5.6.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,10 +14,10 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Databank: `alap5`
+-- Database: `alap5`
 --
 
 -- --------------------------------------------------------
@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `menu` (
-`id_nummer` int(3) NOT NULL,
+  `id_nummer` int(3) NOT NULL,
   `product_nummer` int(3) NOT NULL,
   `product_naam` varchar(30) NOT NULL,
   `product_prijs` float NOT NULL,
@@ -44,7 +44,7 @@ INSERT INTO `menu` (`id_nummer`, `product_nummer`, `product_naam`, `product_prij
 (2, 102, 'Medium cheese burger', 11.95, 'Kaas, tomaat, ui, volkoren brood', 'hoofdgerecht'),
 (3, 103, 'Entrecote', 13.95, 'Rundvlees, gemengde groentes', 'hoofdgerecht'),
 (4, 1, 'Gambas', 6.95, 'Gepelde gambas, gebakken met knoflook en spaanse pepers', 'voorgerecht'),
-(5, 2, 'Carpaccio', 7.5, 'Carpaccio met truffeldressing, parmezaanse kaas en rucola', 'voorgerecht'),
+(5, 2, 'Carpaccio', 7.95, 'Carpaccio met truffeldressing, parmezaanse kaas en rucola', 'voorgerecht'),
 (6, 3, 'Tomatensoep', 4.95, 'Tomatensoep met verse gebakken stokbrood', 'voorgerecht'),
 (7, 201, 'Creme brulee', 9.95, 'Geparfumeerd met citroengras, vanille-ijs en een amandelkrul', 'nagerecht'),
 (8, 202, 'Dame blanche', 8.95, 'Vanille-ijs met chocolade en slagroomsaus', 'nagerecht'),
@@ -61,7 +61,7 @@ INSERT INTO `menu` (`id_nummer`, `product_nummer`, `product_naam`, `product_prij
 -- Indexen voor tabel `menu`
 --
 ALTER TABLE `menu`
- ADD PRIMARY KEY (`id_nummer`);
+  ADD PRIMARY KEY (`id_nummer`);
 
 --
 -- AUTO_INCREMENT voor geëxporteerde tabellen
@@ -71,7 +71,7 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT voor een tabel `menu`
 --
 ALTER TABLE `menu`
-MODIFY `id_nummer` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+  MODIFY `id_nummer` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
