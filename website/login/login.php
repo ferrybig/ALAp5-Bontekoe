@@ -300,7 +300,6 @@ if ($displayForm[0] === true) {
     }
     echo "<p><label><span>password:</span><input type=password name=password></label></p>";
     echo "<input type=submit value=Login>";
-    echo "<p><a href=register.php>Make an new account</a></p>";
     echo "</form>";
 } else {
     $_SESSION["user"] = $displayForm[1];
