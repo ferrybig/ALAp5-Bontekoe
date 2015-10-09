@@ -156,14 +156,14 @@ body a {
 
 .navbar-inverse-blue .navbar-inner {
     padding: 7px 0;
-    background: #c32143;
+    background: #d8267d;
     border: none;
     font-size: 0.85em;
 }
 
 .navbar-inner_1 {
     padding: 7px 0;
-    background: #c32143;
+    background: #d8267d;
     border: none;
     font-size: 0.85em;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.14);
@@ -1294,7 +1294,7 @@ ul.footer_social li {
 }
 
 i.fa1 {
-    background: #c32143;
+    background: #d8267d;
     width: 26px;
     height: 26px;
     color: #fff;
