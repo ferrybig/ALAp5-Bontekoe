@@ -2973,7 +2973,7 @@ form#contact-form {
     margin: 0 auto;
 }
 
-#contact-form input[type='text'], #contact-form textarea {
+#contact-form input[type='text'], #contact-form input[type='number'], #contact-form input[type='email'], #contact-form textarea {
     background-color: white;
     border: none;
     width: 100%;

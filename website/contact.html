@@ -146,15 +146,15 @@
             <div class="container">
                 <h2>Contact Formulier</h2>
 
-                <form id="contact-form" class="contact-form">
+                <form id="contact-form" class="contact-form" method="post" action="restaurant/inc/contactHandler.php">
                     <fieldset>
-                        <input type="text" class="text" placeholder="" value="Naam" onfocus="this.value = '';"
+                        <input type="text" name="Name" class="text" placeholder="" value="Naam" onfocus="this.value = '';"
                                onblur="if (this.value == '') {this.value = 'Name';}">
-                        <input type="text" class="text" placeholder="" value="Telefoon" onfocus="this.value = '';"
+                        <input type="number" name="Phone" class="text" placeholder="Telefoon" value="Telefoon" onfocus="this.value = '';"
                                onblur="if (this.value == '') {this.value = 'Phone';}">
-                        <input type="text" class="text" placeholder="" value="Email" onfocus="this.value = '';"
+                        <input type="email" name="Email" class="text" placeholder="Email" value="" onfocus="this.value = '';"
                                onblur="if (this.value == '') {this.value = 'Email';}">
-                        <textarea onfocus="this.value = '';"
+                        <textarea name="Message" onfocus="this.value = '';"
                                   onblur="if (this.value == '') {this.value = 'Message';}">Bericht</textarea>
                         <input name="submit" type="submit" id="submit" value="Versturen">
                     </fieldset>
