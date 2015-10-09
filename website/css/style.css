@@ -4346,3 +4346,21 @@ ul.feature_list.feature_list1 {
     min-width: 100px;
     border: solid 1px #000;
 }
+
+.bios-img{
+    width: 60%;
+    float: right;
+    position: inherit;
+}
+
+#bios-img{
+    width: 100%;
+}
+
+.bios-text{
+    width: 40%;
+}
+
+.bios-social{
+    margin-top: 5%;
+}
