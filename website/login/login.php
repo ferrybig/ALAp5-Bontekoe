@@ -298,7 +298,7 @@ if ($displayForm[0] === true) {
     } else {
         echo "<p><label><span>Email:</span><input type=text name=login value='" . filter_input(INPUT_POST, "username", FILTER_SANITIZE_FULL_SPECIAL_CHARS) . "'></p>";
     }
-    echo "<p><label><span>password:</span><input type=password name=password></label></p>";
+    echo "<p><label><span>Wachtwoord:</span><input type=password name=password></label></p>";
     echo "<input type=submit value=Login>";
     echo "</form>";
 } else {
