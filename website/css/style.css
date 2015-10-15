@@ -4364,3 +4364,8 @@ ul.feature_list.feature_list1 {
 .bios-social{
     margin-top: 5%;
 }
+
+.menu-table tr td,
+.menu-table tr th{
+    padding: 1%;
+}

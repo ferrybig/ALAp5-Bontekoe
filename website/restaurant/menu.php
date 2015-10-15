@@ -150,11 +150,11 @@ require_once __DIR__ . "/../php/_db.php";
             </p>';
                         trigger_error($sMsg);
                     }
-                    echo "<table border='1'>
+                    echo "<table class='menu-table' border='1'>
             <tr>
-            <td>Nummer</td>
-            <td>Voorgerecht</td>
-            <td>Prijs</td>
+            <th>Nummer</th>
+            <th>Voorgerecht</th>
+            <th>Prijs</th>
             </tr>
             ";
                     while ($rij = $hoofd->fetch()) {
@@ -165,7 +165,7 @@ require_once __DIR__ . "/../php/_db.php";
                         $product_beschrijving = $rij['product_beschrijving'];
                         echo "<tr>
         <td>$product_nummer</td>
-        <td>$product_naam</td>
+        <td style='border-bottom-color: white; font-weight: bold;'>$product_naam</td>
         <td>€ $product_prijs</td>
         </tr>
         <tr>
@@ -189,11 +189,11 @@ require_once __DIR__ . "/../php/_db.php";
             </p>';
                         trigger_error($sMsg);
                     }
-                    echo "<table border='1'>
+                    echo "<table class='menu-table' border='1'>
             <tr>
-            <td>Nummer</td>
-            <td>Hoofdgerecht</td>
-            <td>Prijs</td>
+            <th>Nummer</th>
+            <th>Hoofdgerecht</th>
+            <th>Prijs</th>
             </tr>
             ";
                     while ($rij = $hoofd->fetch()) {
@@ -204,7 +204,7 @@ require_once __DIR__ . "/../php/_db.php";
                         $product_beschrijving = $rij['product_beschrijving'];
                         echo "<tr>
         <td>$product_nummer</td>
-        <td>$product_naam</td>
+        <td style='border-bottom-color: white; font-weight: bold;'>$product_naam</td>
         <td>€ $product_prijs</td>
         </tr>
         <tr>
@@ -228,11 +228,11 @@ require_once __DIR__ . "/../php/_db.php";
             </p>';
                         trigger_error($sMsg);
                     }
-                    echo "<table border='1'>
+                    echo "<table class='menu-table' border='1'>
             <tr>
-            <td>Nummer</td>
-            <td>Nagerecht</td>
-            <td>Prijs</td>
+            <th>Nummer</th>
+            <th>Nagerecht</th>
+            <th>Prijs</th>
             </tr>
             ";
                     while ($rij = $hoofd->fetch()) {
@@ -243,7 +243,7 @@ require_once __DIR__ . "/../php/_db.php";
                         $product_beschrijving = $rij['product_beschrijving'];
                         echo "<tr>
         <td>$product_nummer</td>
-        <td>$product_naam</td>
+        <td style='border-bottom-color: white; font-weight: bold;'>$product_naam</td>
         <td>€ $product_prijs</td>
         </tr>
         <tr>
@@ -267,11 +267,11 @@ require_once __DIR__ . "/../php/_db.php";
             </p>';
                         trigger_error($sMsg);
                     }
-                    echo "<table border='1'>
+                    echo "<table class='menu-table' border='1'>
             <tr>
-            <td>Nummer</td>
-            <td>Dranken</td>
-            <td>Prijs</td>
+            <th>Nummer</th>
+            <th>Dranken</th>
+            <th>Prijs</th>
             </tr>
             ";
                     while ($rij = $hoofd->fetch()) {
@@ -282,7 +282,7 @@ require_once __DIR__ . "/../php/_db.php";
                         $product_beschrijving = $rij['product_beschrijving'];
                         echo "<tr>
         <td>$product_nummer</td>
-        <td>$product_naam</td>
+        <td style='border-bottom-color: white; font-weight: bold;'>$product_naam</td>
         <td>€ $product_prijs</td>
         </tr>
         <tr>
